@@ -1,0 +1,186 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>黄冈“十五五”规划重点内容可视化解读</title>
+  <style>
+    :root {
+      --red: #b91c1c;
+      --dark: #7f1d1d;
+      --gold: #b7791f;
+      --ink: #111827;
+      --muted: #5f6673;
+      --line: rgba(127, 29, 29, 0.16);
+      --shadow: 0 24px 70px rgba(72, 24, 16, 0.13);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", Arial, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% 10%, rgba(185, 28, 28, 0.14), transparent 30rem),
+        radial-gradient(circle at 88% 26%, rgba(183, 121, 31, 0.12), transparent 30rem),
+        linear-gradient(120deg, #fff8ed 0%, #fffaf4 48%, #eef7ff 100%);
+      line-height: 1.65;
+      min-height: 100vh;
+    }
+    a { color: inherit; text-decoration: none; }
+    header {
+      padding: clamp(42px, 7vw, 88px) clamp(22px, 6vw, 86px) 24px;
+    }
+    .seal {
+      width: 62px;
+      height: 50px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      color: #fff;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--red), var(--dark));
+      box-shadow: 0 16px 34px rgba(185, 28, 28, 0.24);
+      margin-bottom: 20px;
+    }
+    .eyebrow {
+      color: var(--red);
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      font-size: 14px;
+    }
+    h1 {
+      margin: 12px 0 16px;
+      max-width: 980px;
+      font-size: clamp(42px, 6vw, 82px);
+      line-height: 1.05;
+    }
+    .lead {
+      margin: 0;
+      max-width: 820px;
+      color: #343b47;
+      font-size: clamp(18px, 1.5vw, 23px);
+    }
+    main {
+      width: min(1180px, calc(100% - 44px));
+      margin: 22px auto 80px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+    .card {
+      min-height: 230px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 22px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.86);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 30px 80px rgba(72, 24, 16, 0.17);
+    }
+    .card strong {
+      display: block;
+      color: var(--red);
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+    }
+    .card h2 {
+      margin: 0 0 12px;
+      font-size: 25px;
+      line-height: 1.25;
+    }
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+    .action {
+      margin-top: 22px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--red), var(--dark));
+      border-radius: 999px;
+      padding: 9px 14px;
+      font-weight: 900;
+      font-size: 14px;
+      width: fit-content;
+    }
+    footer {
+      width: min(1180px, calc(100% - 44px));
+      margin: 0 auto 38px;
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="seal">十五五</div>
+    <div class="eyebrow">黄冈规划可视化专题</div>
+    <h1>黄冈“十五五”规划重点内容可视化解读</h1>
+    <p class="lead">本页面汇总已制作完成的章节专题网页。点击任一章节，可进入对应的滚动式图文解读页面。</p>
+  </header>
+
+  <main>
+    <div class="grid">
+      <a class="card" href="huanggang-first-chapter-visual.html">
+        <div>
+          <strong>第一章</strong>
+          <h2>“十五五”时期是黄冈加快高质量发展的关键时期</h2>
+          <p>发展环境、战略定位、总体思路和主要目标。</p>
+        </div>
+        <span class="action">查看章节</span>
+      </a>
+      <a class="card" href="huanggang-chapter2-industrial-system.html">
+        <div>
+          <strong>第二章</strong>
+          <h2>构建现代化产业体系</h2>
+          <p>传统产业、新兴产业、未来产业、现代服务业、产业集群与品牌强市。</p>
+        </div>
+        <span class="action">查看章节</span>
+      </a>
+      <a class="card" href="huanggang-chapter3-innovation.html">
+        <div>
+          <strong>第三章</strong>
+          <h2>科技创新和产业创新深度融合</h2>
+          <p>区域创新体系、企业主体、关键技术攻关、成果转化和科教人才。</p>
+        </div>
+        <span class="action">查看章节</span>
+      </a>
+      <a class="card" href="huanggang-chapter4-digital.html">
+        <div>
+          <strong>第四章</strong>
+          <h2>深入推进数智黄冈建设</h2>
+          <p>数据、算力、网络、算法与 AI 应用场景协同发展。</p>
+        </div>
+        <span class="action">查看章节</span>
+      </a>
+      <a class="card" href="huanggang-chapter5-demand.html">
+        <div>
+          <strong>第五章</strong>
+          <h2>坚定实施扩大内需战略</h2>
+          <p>服务消费、有效投资和全国统一大市场。</p>
+        </div>
+        <span class="action">查看章节</span>
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    内容依据《黄冈市国民经济和社会发展第十五个五年规划纲要》整理。具体表述以规划原文为准。
+  </footer>
+</body>
+</html>
+

@@ -1,0 +1,199 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>黄冈“十五五”规划第三章重点内容可视化解读</title>
+  <style>
+    :root {
+      --red:#b91c1c; --red-dark:#7f1d1d; --gold:#b7791f; --teal:#0f766e; --blue:#1d4ed8;
+      --ink:#111827; --muted:#5f6673; --line:rgba(127,29,29,.16); --card:rgba(255,255,255,.88);
+      --shadow:0 24px 70px rgba(72,24,16,.13); --radius:18px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:112px}
+    body{
+      margin:0;font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",Arial,sans-serif;color:var(--ink);line-height:1.65;
+      background:radial-gradient(circle at 10% 10%,rgba(185,28,28,.13),transparent 30rem),
+        radial-gradient(circle at 88% 22%,rgba(29,78,216,.11),transparent 30rem),
+        linear-gradient(120deg,#fff8ed 0%,#fffaf4 46%,#eef8ff 100%);
+    }
+    a{color:inherit;text-decoration:none}
+    .topbar{position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:22px;padding:14px clamp(20px,4vw,60px);background:rgba(255,250,241,.9);border-bottom:1px solid var(--line);backdrop-filter:blur(16px)}
+    .brand{display:flex;align-items:center;gap:14px;min-width:0}
+    .seal{width:54px;height:44px;border-radius:10px;display:grid;place-items:center;flex:0 0 auto;color:#fff;font-weight:900;background:linear-gradient(135deg,rgba(255,255,255,.16),transparent 38%),linear-gradient(135deg,var(--red),var(--red-dark));box-shadow:0 12px 28px rgba(185,28,28,.26);text-shadow:0 1px 8px rgba(0,0,0,.22)}
+    .brand strong{display:block;font-size:18px;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .brand span{display:block;margin-top:2px;color:var(--muted);font-size:12px}
+    .nav{display:flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+    .nav a{border:1px solid rgba(127,29,29,.18);background:rgba(255,255,255,.72);color:var(--red-dark);border-radius:999px;padding:8px 12px;font-size:13px;font-weight:800}
+    .nav a:hover{background:var(--red);color:#fff}
+    .hero{min-height:calc(100vh - 72px);display:grid;grid-template-columns:minmax(360px,.82fr) minmax(520px,1.18fr);gap:clamp(28px,5vw,76px);align-items:center;padding:clamp(44px,6vw,88px) clamp(22px,5vw,84px)}
+    .eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--red);font-weight:900;letter-spacing:.08em;font-size:14px}
+    .eyebrow:before{content:"";width:34px;height:3px;border-radius:99px;background:var(--red)}
+    h1{margin:18px 0;font-size:clamp(40px,5.3vw,76px);line-height:1.06;letter-spacing:0;max-width:800px}
+    .lead{margin:0;max-width:710px;font-size:clamp(18px,1.45vw,23px);color:#343b47}
+    .hero-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:32px}
+    .metric{padding:16px;border-radius:12px;background:rgba(255,255,255,.78);border:1px solid rgba(127,29,29,.14);box-shadow:0 12px 35px rgba(82,28,18,.08)}
+    .metric strong{display:block;color:var(--red-dark);font-size:24px;line-height:1.15}.metric span{display:block;margin-top:6px;color:var(--muted);font-size:13px}
+    .media,.visual{position:relative;border-radius:var(--radius);overflow:hidden;border:1px solid rgba(127,29,29,.12);box-shadow:var(--shadow);background:#e7dfd0}
+    .media{min-height:620px;height:min(70vh,720px)}.visual{height:clamp(360px,48vw,560px);margin-bottom:22px}
+    .media img,.visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+    .media:after,.visual:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.02),rgba(0,0,0,.27)),linear-gradient(90deg,rgba(127,29,29,.18),transparent 48%);pointer-events:none}
+    .caption{position:absolute;left:24px;right:24px;bottom:22px;z-index:3;color:#fff;text-shadow:0 2px 18px rgba(0,0,0,.55);font-weight:900;font-size:18px}
+    .chips{position:absolute;inset:0;z-index:4;pointer-events:none}.chip{position:absolute;max-width:240px;padding:12px 14px;border-radius:12px;background:rgba(255,255,255,.88);border:1px solid rgba(127,29,29,.14);box-shadow:0 14px 34px rgba(32,20,14,.14);backdrop-filter:blur(10px);color:#202938;font-size:13px;line-height:1.45}.chip strong{display:block;margin-bottom:4px;color:var(--red-dark);font-size:15px}.chip.dark{color:#fff;background:rgba(127,29,29,.92);border-color:rgba(255,255,255,.18)}.chip.dark strong{color:#fff}
+    main{padding-bottom:80px}.section{width:min(1180px,calc(100% - 44px));margin:0 auto clamp(52px,7vw,92px)}
+    .section-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,420px);gap:28px;align-items:end;margin-bottom:22px;padding-top:18px}.section-kicker{color:var(--red);font-weight:900;letter-spacing:.08em;font-size:13px}h2{margin:8px 0 0;font-size:clamp(30px,3.6vw,48px);line-height:1.12}.section-head p{margin:0;color:#3b4351;font-size:16px}
+    .panel{border-radius:var(--radius);padding:clamp(22px,3vw,34px);background:var(--card);border:1px solid rgba(127,29,29,.13);box-shadow:var(--shadow)}
+    .path{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.path-card{min-height:158px;padding:16px;border-radius:14px;background:linear-gradient(180deg,rgba(255,255,255,.94),rgba(255,250,241,.82));border:1px solid rgba(127,29,29,.13);position:relative;overflow:hidden}.path-card:before{content:attr(data-step);position:absolute;right:12px;top:8px;color:rgba(127,29,29,.12);font-size:42px;font-weight:900;line-height:1}
+    .icon{width:36px;height:36px;border-radius:11px;display:inline-grid;place-items:center;color:var(--red-dark);background:rgba(185,28,28,.08);border:1px solid rgba(185,28,28,.14);margin-bottom:10px}.icon svg,.pill svg{width:18px;height:18px;stroke:currentColor;stroke-width:2.1;fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .path-card h3,.card h3{margin:0 0 8px;font-size:18px;line-height:1.28}.path-card p,.card p{margin:0;color:var(--muted);font-size:14px}
+    .grid{display:grid;gap:14px}.grid.two{grid-template-columns:repeat(2,1fr)}.grid.three{grid-template-columns:repeat(3,1fr)}.grid.four{grid-template-columns:repeat(4,1fr)}.grid.auto{grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+    .card{padding:18px;border-radius:14px;background:rgba(255,255,255,.9);border:1px solid rgba(127,29,29,.12);box-shadow:0 10px 30px rgba(72,24,16,.07)}.card.feature{background:linear-gradient(135deg,rgba(185,28,28,.94),rgba(127,29,29,.94)),#8b1a1a;color:#fff}.card.feature p,.card.feature .small{color:rgba(255,255,255,.84)}.num{display:block;color:var(--red);font-size:30px;line-height:1;font-weight:900;margin-bottom:8px}.feature .num{color:#fff}.small{color:var(--muted);font-size:13px}
+    .split{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:18px;align-items:stretch}.list{display:grid;gap:10px;margin:0;padding:0;list-style:none}.list li{padding:12px 14px;border-radius:12px;background:rgba(255,255,255,.76);border:1px solid rgba(127,29,29,.11)}.list strong{color:var(--red-dark)}
+    .pill-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}.pill{display:inline-flex;align-items:center;gap:7px;padding:7px 10px;border-radius:999px;color:var(--red-dark);border:1px solid rgba(127,29,29,.16);background:rgba(255,250,241,.82);font-weight:800;font-size:13px}
+    .quote{margin:18px 0 0;padding:18px 20px;border-left:5px solid var(--red);border-radius:0 14px 14px 0;background:rgba(185,28,28,.07);color:#2c3442;font-weight:800}.footer-note{width:min(1180px,calc(100% - 44px));margin:0 auto;padding:24px 0 38px;color:var(--muted);border-top:1px solid var(--line);font-size:13px}
+    @media(max-width:1080px){.hero,.section-head,.split{grid-template-columns:1fr}.media{min-height:480px;height:56vw}.path{grid-template-columns:repeat(2,1fr)}.grid.four,.grid.three{grid-template-columns:repeat(2,1fr)}}@media(max-width:720px){.topbar{align-items:flex-start;flex-direction:column;gap:12px}.brand strong{white-space:normal}.hero{padding:34px 20px 52px}.hero-metrics,.path,.grid.two,.grid.three,.grid.four{grid-template-columns:1fr}.media{min-height:360px}.chip{position:static;max-width:none;margin:10px}.chips{position:relative;display:grid;grid-template-columns:1fr;background:rgba(255,250,241,.88)}.caption{position:relative;left:auto;right:auto;bottom:auto;padding:16px;color:var(--ink);text-shadow:none;background:rgba(255,255,255,.86)}}
+  </style>
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute">
+    <symbol id="network" viewBox="0 0 24 24"><circle cx="12" cy="5" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="18" r="2"/><path d="M11 7L6 16M13 7l5 9M7 18h10"/></symbol>
+    <symbol id="lab" viewBox="0 0 24 24"><path d="M9 3h6"/><path d="M10 3v5l-5 9a3 3 0 0 0 3 4h8a3 3 0 0 0 3-4l-5-9V3"/><path d="M7 16h10"/></symbol>
+    <symbol id="factory" viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V9l5 3V9l5 3V5h4v16"/><path d="M9 17h1M13 17h1M17 17h1"/></symbol>
+    <symbol id="target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></symbol>
+    <symbol id="spark" viewBox="0 0 24 24"><path d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8L12 2Z"/></symbol>
+    <symbol id="graduate" viewBox="0 0 24 24"><path d="M3 8l9-4 9 4-9 4-9-4Z"/><path d="M7 11v5c3 2 7 2 10 0v-5"/><path d="M21 8v6"/></symbol>
+    <symbol id="link" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7 0l2-2a5 5 0 0 0-7-7l-1 1"/><path d="M14 11a5 5 0 0 0-7 0l-2 2a5 5 0 0 0 7 7l1-1"/></symbol>
+  </svg>
+
+  <header class="topbar">
+    <a class="brand" href="#top"><div class="seal">十五五</div><div><strong>黄冈“十五五”规划第三章重点内容可视化解读</strong><span>第一节至第五节｜科技创新与产业创新深度融合</span></div></a>
+    <nav class="nav" aria-label="章节导航">
+      <a href="#path">路径</a><a href="#region">区域创新</a><a href="#enterprise">企业主体</a><a href="#tech">技术攻关</a><a href="#transfer">成果转化</a><a href="#talent">科教人才</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="top">
+    <div>
+      <div class="eyebrow">第三章</div>
+      <h1>推动科技创新和产业创新深度融合，因地制宜发展新质生产力</h1>
+      <p class="lead">第三章的重点，是把创新从“资源导入”推进到“企业主导、技术攻关、成果转化、人才支撑”的闭环体系，让科技创新真正落到产业升级和现实生产力上。</p>
+      <div class="hero-metrics">
+        <div class="metric"><strong>1500家+</strong><span>规上高新技术企业目标</span></div>
+        <div class="metric"><strong>北斗七星式</strong><span>成果转化体系</span></div>
+        <div class="metric"><strong>四链融合</strong><span>人才链、教育链、产业链、创新链</span></div>
+      </div>
+    </div>
+    <figure class="media">
+      <img src="assets/chapter3-hero-innovation.jpg" alt="黄冈区域创新体系视觉图" />
+      <figcaption class="caption">以区域协同创新为入口，把平台、企业、技术、场景和人才连接成创新闭环。</figcaption>
+      <div class="chips">
+        <div class="chip dark" style="left:5%;top:7%"><strong>创新共同体</strong>深度参与武汉国家科技创新中心建设。</div>
+        <div class="chip" style="right:6%;top:10%"><strong>科创资源导入</strong>项目、平台、成果、人才系统导入黄冈。</div>
+        <div class="chip" style="right:8%;bottom:12%"><strong>新质生产力</strong>科技创新和产业创新深度融合。</div>
+      </div>
+    </figure>
+  </section>
+
+  <main>
+    <section class="section" id="path">
+      <div class="section-head"><div><div class="section-kicker">总体路径</div><h2>五节内容构成一套创新转化链</h2></div><p>第三章不是只讲科研平台，而是把区域创新、企业主体、关键技术、成果转化、教育科技人才放进同一套运行机制。</p></div>
+      <div class="path">
+        <article class="path-card" data-step="01"><span class="icon"><svg><use href="#network"/></svg></span><h3>区域创新体系</h3><p>依托科创大走廊，构建点面结合、开放协同的创新体系。</p></article>
+        <article class="path-card" data-step="02"><span class="icon"><svg><use href="#factory"/></svg></span><h3>企业创新主体</h3><p>推动企业成为研发投入、科研组织、成果转化主体。</p></article>
+        <article class="path-card" data-step="03"><span class="icon"><svg><use href="#target"/></svg></span><h3>关键技术攻关</h3><p>围绕传统、新兴、未来产业，突破关键核心技术瓶颈。</p></article>
+        <article class="path-card" data-step="04"><span class="icon"><svg><use href="#link"/></svg></span><h3>成果转化应用</h3><p>建设政产学研金服用协同的成果转化体系。</p></article>
+        <article class="path-card" data-step="05"><span class="icon"><svg><use href="#graduate"/></svg></span><h3>教育科技人才</h3><p>让教育培养人才、人才支撑科技、科技引领教育形成循环。</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="region">
+      <div class="section-head"><div><div class="section-kicker">第一节｜加强区域创新体系建设</div><h2>先把黄冈接入更大的创新网络</h2></div><p>依托武鄂黄黄咸光谷科创大走廊，深度参与武汉国家科技创新中心建设，形成融通协作的创新共同体。</p></div>
+      <div class="panel">
+        <div class="grid three">
+          <article class="card feature"><span class="icon"><svg><use href="#network"/></svg></span><h3>区域协同创新</h3><p>建设科创大走廊黄冈功能区、主城创新高地和特色创新发展基地。</p></article>
+          <article class="card"><h3>“前台+后台”协同模式</h3><p>前台引才、研发、孵化在武汉；后台用才、转化、生产在黄冈。</p></article>
+          <article class="card"><h3>高能级科技力量矩阵</h3><p>技术创新中心、重点实验室、新型研发机构和产业技术研究院联动。</p></article>
+        </div>
+        <div class="quote">第一节的关键，是用区域协同解决黄冈创新资源不足的问题，让武汉科创资源与黄冈产业承载能力形成互补。</div>
+      </div>
+    </section>
+
+    <section class="section" id="enterprise">
+      <div class="section-head"><div><div class="section-kicker">第二节｜强化企业科技创新主体地位</div><h2>创新最终要落到企业和产业链上</h2></div><p>规划强调企业主导的产学研协同创新，推动创新要素向企业集聚。</p></div>
+      <div class="visual">
+        <img src="assets/chapter3-tech-breakthrough.jpg" alt="企业创新和关键技术攻关视觉图" />
+        <div class="chips">
+          <div class="chip dark" style="left:5%;top:8%"><strong>企业梯度</strong>科技型中小企业、高新技术企业、科创新物种、科技领军企业。</div>
+          <div class="chip" style="right:5%;top:10%"><strong>融通创新</strong>龙头企业牵引，大中小企业协同。</div>
+          <div class="chip" style="right:8%;bottom:12%"><strong>研发投入</strong>财税、金融、政府采购和平台结对共同支撑。</div>
+        </div>
+      </div>
+      <div class="grid three">
+        <article class="card feature"><span class="num">1500家+</span><h3>规上高新技术企业</h3><p>到“十五五”末，规上高新技术企业达到 1500 家以上。</p></article>
+        <article class="card"><h3>梯度培育体系</h3><p>科技型中小企业、高新技术企业、科创新物种企业、科技领军企业逐级成长。</p></article>
+        <article class="card"><h3>研发机构扩面</h3><p>实施规上工业企业研发机构扩面攻坚行动，力争企业研发活动全覆盖。</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="tech">
+      <div class="section-head"><div><div class="section-kicker">第三节｜实施需求导向的关键技术攻关</div><h2>技术攻关跟着产业需求走</h2></div><p>这一节把技术攻关分成传统产业、新兴产业、未来产业三类，强调集中突破关键核心技术瓶颈。</p></div>
+      <div class="panel">
+        <div class="grid three">
+          <article class="card"><span class="icon"><svg><use href="#factory"/></svg></span><h3>传统产业攻关</h3><p>农产品精深加工、道地药材良种选育、建材节能降耗、石材固废利用、船舶智能焊接、纺织智能巡检等。</p></article>
+          <article class="card feature"><span class="icon"><svg><use href="#lab"/></svg></span><h3>新兴产业攻关</h3><p>半导体材料、精密部件、智能传感器、新型储能、高端专用化学品、绿色合成技术。</p></article>
+          <article class="card"><span class="icon"><svg><use href="#spark"/></svg></span><h3>未来产业攻关</h3><p>高精度减速器、智能驱动模组、多模态感知控制、生物酶制剂、生物基材料、生物燃料、氢能技术。</p></article>
+        </div>
+        <div class="pill-row">
+          <span class="pill">揭榜挂帅</span><span class="pill">赛马制</span><span class="pill">产业链现代化</span><span class="pill">未来产业项目</span><span class="pill">成果转化加速</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="transfer">
+      <div class="section-head"><div><div class="section-kicker">第四节｜加快科技成果高效转化应用</div><h2>把科研成果变成现实生产力</h2></div><p>建立政产学研金服用“北斗七星式”成果转化体系，提升科技成果供给与产业需求匹配度。</p></div>
+      <div class="visual">
+        <img src="assets/chapter3-transfer-talent.jpg" alt="成果转化和教育科技人才视觉图" />
+        <div class="chips">
+          <div class="chip dark" style="left:5%;top:8%"><strong>七方协同</strong>政府、产业、大学、科研、金融、服务、应用场景联动。</div>
+          <div class="chip" style="right:5%;top:10%"><strong>转化机制</strong>赋权改革、收益分配、尽职容错、经费管理优化。</div>
+          <div class="chip" style="left:7%;bottom:12%"><strong>场景牵引</strong>一项技术成果、一个典型场景、一个行业推广。</div>
+        </div>
+      </div>
+      <div class="grid three">
+        <article class="card feature"><h3>服务体系</h3><p>“一校（院）一中心”、大别山分中心、科技“汉交所”、专业经理人队伍共同支撑技术交易。</p></article>
+        <article class="card"><h3>体制机制</h3><p>职务科技成果赋权、收益分配激励、科研管理容错免责，提升成果就地转化率。</p></article>
+        <article class="card"><h3>创新场景</h3><p>光电材料中试转化、硅基光电子器件、蕲艾精深加工、道地药材育种、智能农机适配等场景开放。</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="talent">
+      <div class="section-head"><div><div class="section-kicker">第五节｜一体推进教育科技人才发展</div><h2>把人才培养、科技创新和产业需求拧成一股绳</h2></div><p>教育链、人才链、产业链、创新链融合，是第三章闭环的最后一环。</p></div>
+      <div class="panel">
+        <div class="split">
+          <div>
+            <div class="section-kicker">科教协同育人</div>
+            <ul class="list" style="margin-top:14px">
+              <li><strong>高校学科布局：</strong>建立“基础学科+应用学科+产业需求”的动态调整机制。</li>
+              <li><strong>产教融合：</strong>校企联合开发课程，共建产业学院与实训基地，扩大“订单班”规模。</li>
+              <li><strong>人才培养：</strong>青年拔尖人才、现场工程师、高技能人才、高素质农民和农业科技示范主体同步培育。</li>
+            </ul>
+          </div>
+          <div>
+            <div class="section-kicker">能力条件与机制</div>
+            <ul class="list" style="margin-top:14px">
+              <li><strong>人才服务：</strong>发挥市人才发展集团作用，构建人才发展全周期服务体系。</li>
+              <li><strong>链式引才：</strong>推行“资源变项目、项目聚人才、人才强产业”。</li>
+              <li><strong>评价机制：</strong>健全以创新能力、质量、实效、贡献为导向的科技人才评价体系。</li>
+            </ul>
+          </div>
+        </div>
+        <div class="quote">第五节把第三章收束到“人”：创新体系能不能持续运转，最终取决于教育、科技、人才是否能围绕产业需求形成良性循环。</div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer-note">内容依据《黄冈市国民经济和社会发展第十五个五年规划纲要》第三章第一节至第五节整理。页面文字用于重点解读，具体表述以规划原文为准。</footer>
+</body>
+</html>
+
