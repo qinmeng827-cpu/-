@@ -1,0 +1,641 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>黄冈“十五五”规划第二章重点内容可视化解读</title>
+  <style>
+    :root {
+      --red: #b91c1c;
+      --red-dark: #7f1d1d;
+      --gold: #b7791f;
+      --teal: #0f766e;
+      --blue: #1d4ed8;
+      --green: #15803d;
+      --ink: #111827;
+      --muted: #5f6673;
+      --line: rgba(127, 29, 29, 0.16);
+      --paper: #fffaf1;
+      --card: rgba(255, 255, 255, 0.88);
+      --shadow: 0 24px 70px rgba(72, 24, 16, 0.13);
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 112px; }
+    body {
+      margin: 0;
+      font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", Arial, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% 10%, rgba(185, 28, 28, 0.13), transparent 30rem),
+        radial-gradient(circle at 88% 28%, rgba(15, 118, 110, 0.11), transparent 28rem),
+        linear-gradient(120deg, #fff8ed 0%, #fffaf4 46%, #edf7ff 100%);
+      line-height: 1.65;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+      padding: 14px clamp(20px, 4vw, 60px);
+      background: rgba(255, 250, 241, 0.9);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(16px);
+    }
+
+    .brand { display: flex; align-items: center; gap: 14px; min-width: 0; }
+    .seal {
+      width: 54px;
+      height: 44px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      color: #fff;
+      font-weight: 900;
+      letter-spacing: 0;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.16), transparent 38%),
+        linear-gradient(135deg, var(--red), var(--red-dark));
+      box-shadow: 0 12px 28px rgba(185, 28, 28, 0.26);
+      text-shadow: 0 1px 8px rgba(0, 0, 0, 0.22);
+    }
+
+    .brand strong {
+      display: block;
+      font-size: 18px;
+      line-height: 1.25;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .brand span { display: block; margin-top: 2px; color: var(--muted); font-size: 12px; }
+    .nav { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; justify-content: flex-end; }
+    .nav a {
+      border: 1px solid rgba(127, 29, 29, 0.18);
+      background: rgba(255, 255, 255, 0.72);
+      color: var(--red-dark);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 13px;
+      font-weight: 800;
+    }
+    .nav a:hover { background: var(--red); color: #fff; }
+
+    .hero {
+      min-height: calc(100vh - 72px);
+      display: grid;
+      grid-template-columns: minmax(360px, 0.82fr) minmax(520px, 1.18fr);
+      gap: clamp(28px, 5vw, 76px);
+      align-items: center;
+      padding: clamp(44px, 6vw, 88px) clamp(22px, 5vw, 84px);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--red);
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      font-size: 14px;
+    }
+    .eyebrow::before { content: ""; width: 34px; height: 3px; border-radius: 99px; background: var(--red); }
+    h1 { margin: 18px 0 18px; font-size: clamp(40px, 5.3vw, 76px); line-height: 1.06; letter-spacing: 0; max-width: 780px; }
+    .lead { margin: 0; max-width: 700px; font-size: clamp(18px, 1.45vw, 23px); color: #343b47; }
+
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    .metric {
+      padding: 16px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid rgba(127, 29, 29, 0.14);
+      box-shadow: 0 12px 35px rgba(82, 28, 18, 0.08);
+    }
+    .metric strong { display: block; color: var(--red-dark); font-size: 24px; line-height: 1.15; }
+    .metric span { display: block; margin-top: 6px; color: var(--muted); font-size: 13px; }
+
+    .media {
+      position: relative;
+      min-height: 620px;
+      height: min(70vh, 720px);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(127, 29, 29, 0.12);
+      background: #e7dfd0;
+    }
+    .media img, .visual img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .media::after, .visual::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0.28)),
+        linear-gradient(90deg, rgba(127,29,29,0.18), transparent 48%);
+      pointer-events: none;
+    }
+    .caption {
+      position: absolute;
+      left: 24px;
+      right: 24px;
+      bottom: 22px;
+      z-index: 3;
+      color: #fff;
+      text-shadow: 0 2px 18px rgba(0,0,0,0.55);
+      font-weight: 900;
+      font-size: 18px;
+    }
+
+    .chips { position: absolute; inset: 0; z-index: 4; pointer-events: none; }
+    .chip {
+      position: absolute;
+      max-width: 230px;
+      padding: 12px 14px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.88);
+      border: 1px solid rgba(127,29,29,0.14);
+      box-shadow: 0 14px 34px rgba(32,20,14,0.14);
+      backdrop-filter: blur(10px);
+      color: #202938;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+    .chip strong { display: block; margin-bottom: 4px; color: var(--red-dark); font-size: 15px; }
+    .chip.dark { color: #fff; background: rgba(127,29,29,0.92); border-color: rgba(255,255,255,0.18); }
+    .chip.dark strong { color: #fff; }
+
+    main { padding-bottom: 80px; }
+    .section {
+      width: min(1180px, calc(100% - 44px));
+      margin: 0 auto clamp(52px, 7vw, 92px);
+    }
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
+      gap: 28px;
+      align-items: end;
+      margin-bottom: 22px;
+      padding-top: 18px;
+    }
+    .section-kicker { color: var(--red); font-weight: 900; letter-spacing: 0.08em; font-size: 13px; }
+    h2 { margin: 8px 0 0; font-size: clamp(30px, 3.6vw, 48px); line-height: 1.12; }
+    .section-head p { margin: 0; color: #3b4351; font-size: 16px; }
+
+    .panel {
+      border-radius: var(--radius);
+      padding: clamp(22px, 3vw, 34px);
+      background: var(--card);
+      border: 1px solid rgba(127,29,29,0.13);
+      box-shadow: var(--shadow);
+    }
+
+    .visual {
+      position: relative;
+      height: clamp(360px, 48vw, 560px);
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid rgba(127,29,29,0.12);
+      box-shadow: 0 18px 54px rgba(72, 24, 16, 0.12);
+      background: #ece2d2;
+      margin-bottom: 22px;
+    }
+
+    .path {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 12px;
+    }
+    .path-card {
+      min-height: 150px;
+      padding: 16px;
+      border-radius: 14px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.94), rgba(255,250,241,0.82));
+      border: 1px solid rgba(127,29,29,0.13);
+      position: relative;
+      overflow: hidden;
+    }
+    .path-card::before {
+      content: attr(data-step);
+      position: absolute;
+      right: 12px;
+      top: 8px;
+      color: rgba(127,29,29,0.12);
+      font-size: 42px;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 11px;
+      display: inline-grid;
+      place-items: center;
+      color: var(--red-dark);
+      background: rgba(185,28,28,0.08);
+      border: 1px solid rgba(185,28,28,0.14);
+      margin-bottom: 10px;
+    }
+    .icon svg, .pill svg { width: 18px; height: 18px; stroke: currentColor; stroke-width: 2.1; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+    .path-card h3, .card h3 { margin: 0 0 8px; font-size: 18px; line-height: 1.28; }
+    .path-card p, .card p { margin: 0; color: var(--muted); font-size: 14px; }
+
+    .grid { display: grid; gap: 14px; }
+    .grid.two { grid-template-columns: repeat(2, 1fr); }
+    .grid.three { grid-template-columns: repeat(3, 1fr); }
+    .grid.four { grid-template-columns: repeat(4, 1fr); }
+    .grid.auto { grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); }
+
+    .card {
+      padding: 18px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.9);
+      border: 1px solid rgba(127,29,29,0.12);
+      box-shadow: 0 10px 30px rgba(72,24,16,0.07);
+    }
+    .card.feature {
+      background:
+        linear-gradient(135deg, rgba(185,28,28,0.94), rgba(127,29,29,0.94)),
+        #8b1a1a;
+      color: #fff;
+    }
+    .card.feature p, .card.feature .small { color: rgba(255,255,255,0.84); }
+    .num { display: block; color: var(--red); font-size: 30px; line-height: 1; font-weight: 900; margin-bottom: 8px; }
+    .feature .num { color: #fff; }
+    .small { color: var(--muted); font-size: 13px; }
+
+    .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      color: var(--red-dark);
+      border: 1px solid rgba(127,29,29,0.16);
+      background: rgba(255,250,241,0.82);
+      font-weight: 800;
+      font-size: 13px;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+      gap: 18px;
+      align-items: stretch;
+    }
+    .list {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .list li {
+      padding: 12px 14px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.76);
+      border: 1px solid rgba(127,29,29,0.11);
+    }
+    .list strong { color: var(--red-dark); }
+
+    .matrix {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 10px;
+    }
+    .county {
+      padding: 13px;
+      border-radius: 12px;
+      border: 1px solid rgba(127,29,29,0.12);
+      background: rgba(255,255,255,0.84);
+    }
+    .county strong { display: block; color: var(--red-dark); font-size: 16px; }
+    .county span { display: block; margin-top: 4px; color: var(--muted); font-size: 12px; }
+    .county b { color: var(--ink); }
+
+    .quote {
+      margin: 18px 0 0;
+      padding: 18px 20px;
+      border-left: 5px solid var(--red);
+      border-radius: 0 14px 14px 0;
+      background: rgba(185,28,28,0.07);
+      color: #2c3442;
+      font-weight: 800;
+    }
+
+    .footer-note {
+      width: min(1180px, calc(100% - 44px));
+      margin: 0 auto;
+      padding: 24px 0 38px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      font-size: 13px;
+    }
+
+    @media (max-width: 1080px) {
+      .hero, .section-head, .split { grid-template-columns: 1fr; }
+      .media { min-height: 480px; height: 56vw; }
+      .path { grid-template-columns: repeat(3, 1fr); }
+      .grid.four { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 720px) {
+      .topbar { align-items: flex-start; flex-direction: column; gap: 12px; }
+      .nav { justify-content: flex-start; }
+      .brand strong { white-space: normal; }
+      .hero { padding: 34px 20px 52px; }
+      .hero-metrics, .path, .grid.two, .grid.three, .grid.four { grid-template-columns: 1fr; }
+      .media { min-height: 360px; }
+      .chip { position: static; max-width: none; margin: 10px; }
+      .chips { position: relative; display: grid; grid-template-columns: 1fr; background: rgba(255,250,241,0.88); }
+      .caption { position: relative; left: auto; right: auto; bottom: auto; padding: 16px; color: var(--ink); text-shadow: none; background: rgba(255,255,255,0.86); }
+    }
+  </style>
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute">
+    <symbol id="factory" viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V9l5 3V9l5 3V5h4v16"/><path d="M9 17h1M13 17h1M17 17h1"/></symbol>
+    <symbol id="leaf" viewBox="0 0 24 24"><path d="M5 19C5 10 12 4 20 4c0 8-6 15-15 15Z"/><path d="M5 19c4-4 7-6 12-8"/></symbol>
+    <symbol id="chip" viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M9 1v4M15 1v4M9 19v4M15 19v4M1 9h4M1 15h4M19 9h4M19 15h4"/></symbol>
+    <symbol id="spark" viewBox="0 0 24 24"><path d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8L12 2Z"/><path d="M19 16l.7 2.3L22 19l-2.3.7L19 22l-.7-2.3L16 19l2.3-.7L19 16Z"/></symbol>
+    <symbol id="truck" viewBox="0 0 24 24"><path d="M3 6h11v10H3z"/><path d="M14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></symbol>
+    <symbol id="badge" viewBox="0 0 24 24"><path d="M12 3l7 4v6c0 4-3 7-7 8-4-1-7-4-7-8V7l7-4Z"/><path d="M9 12l2 2 4-5"/></symbol>
+    <symbol id="link" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7 0l2-2a5 5 0 0 0-7-7l-1 1"/><path d="M14 11a5 5 0 0 0-7 0l-2 2a5 5 0 0 0 7 7l1-1"/></symbol>
+    <symbol id="globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></symbol>
+  </svg>
+
+  <header class="topbar">
+    <a class="brand" href="#top">
+      <div class="seal">十五五</div>
+      <div>
+        <strong>黄冈“十五五”规划第二章重点内容可视化解读</strong>
+        <span>第一节至第六节｜构建现代化产业体系</span>
+      </div>
+    </a>
+    <nav class="nav" aria-label="章节导航">
+      <a href="#path">路径</a>
+      <a href="#traditional">传统产业</a>
+      <a href="#emerging">新兴未来</a>
+      <a href="#service">现代服务</a>
+      <a href="#cluster">产业集群</a>
+      <a href="#brand">品牌强市</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="top">
+    <div>
+      <div class="eyebrow">第二章</div>
+      <h1>构建现代化产业体系，在新旧动能转换中闯出新路径</h1>
+      <p class="lead">这一章的主线，是把实体经济作为发展着力点，沿着智能化、绿色化、融合化方向，把传统产业、新兴产业、未来产业、现代服务业、产业集群和品牌体系串成一套完整的产业升级方案。</p>
+      <div class="hero-metrics">
+        <div class="metric"><strong>8类</strong><span>传统产业改造提升</span></div>
+        <div class="metric"><strong>5类</strong><span>新兴产业提质扩量</span></div>
+        <div class="metric"><strong>3类</strong><span>未来产业前瞻布局</span></div>
+      </div>
+    </div>
+    <figure class="media" aria-label="黄冈现代化产业体系视觉图">
+      <img src="assets/chapter2-hero-industrial-system.jpg" alt="黄冈现代化产业体系总览" />
+      <figcaption class="caption">实体经济为底座，制造业升级、服务业赋能、集群联动共同发力。</figcaption>
+      <div class="chips">
+        <div class="chip dark" style="left:5%;top:7%"><strong>产业兴市</strong>先进制造业夯基，现代服务业突破。</div>
+        <div class="chip" style="right:6%;top:10%"><strong>新旧转换</strong>传统产业焕新，新兴产业成柱，未来产业育苗。</div>
+        <div class="chip" style="right:8%;bottom:12%"><strong>空间组织</strong>链群协同、县域承载、品牌放大。</div>
+      </div>
+    </figure>
+  </section>
+
+  <main>
+    <section class="section" id="path">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">总体路径</div>
+          <h2>六节内容可以读成一条产业升级链</h2>
+        </div>
+        <p>第二章不是简单罗列产业门类，而是从“存量焕新”走向“增量培育”，再通过服务业、集群和品牌把产业能力组织起来。</p>
+      </div>
+      <div class="path">
+        <article class="path-card" data-step="01"><span class="icon"><svg><use href="#factory"/></svg></span><h3>改造提升传统产业</h3><p>设备更新、工艺升级、数智赋能，推动绿色转型和高端提质。</p></article>
+        <article class="path-card" data-step="02"><span class="icon"><svg><use href="#chip"/></svg></span><h3>培育壮大新兴产业</h3><p>光电子信息、生命健康、新材料、新能源、低空经济成为新支柱。</p></article>
+        <article class="path-card" data-step="03"><span class="icon"><svg><use href="#spark"/></svg></span><h3>前瞻布局未来产业</h3><p>具身智能、生物制造、氢能作为新的经济增长点。</p></article>
+        <article class="path-card" data-step="04"><span class="icon"><svg><use href="#truck"/></svg></span><h3>突破现代服务业</h3><p>生产性服务业支撑集群，生活性服务业带动消费升级。</p></article>
+        <article class="path-card" data-step="05"><span class="icon"><svg><use href="#link"/></svg></span><h3>推动产业集群发展</h3><p>链长、链主、链创融合，形成县域特色产业集群。</p></article>
+        <article class="path-card" data-step="06"><span class="icon"><svg><use href="#badge"/></svg></span><h3>加强品牌强市建设</h3><p>从黄冈产品走向黄冈品牌，形成区域、企业、产业、产品矩阵。</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="traditional">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">第一节｜改造提升传统产业</div>
+          <h2>存量产业不是包袱，而是升级的最大底盘</h2>
+        </div>
+        <p>规划把农产品加工、建筑、建材、化工、船舶、纺织服装、汽车零部件、再生资源八类产业作为传统产业焕新的重点。</p>
+      </div>
+      <div class="visual">
+        <img src="assets/chapter2-traditional-upgrade.jpg" alt="传统产业转型升级视觉图" />
+        <div class="chips">
+          <div class="chip dark" style="left:4%;top:7%"><strong>升级方向</strong>设备更新、工艺升级、数智赋能、绿色转型。</div>
+          <div class="chip" style="right:5%;top:8%"><strong>三大千亿</strong>农产品加工、建筑、建材均提出千亿级目标。</div>
+          <div class="chip" style="left:6%;bottom:10%"><strong>循环闭环</strong>再生资源从低附加值循环走向高价值利用。</div>
+        </div>
+      </div>
+      <div class="grid four">
+        <article class="card feature"><span class="num">1000亿+</span><h3>农产品加工业</h3><p>从零散初加工走向规模化、现代化精深加工，覆盖粮油、水产、中药材、茶叶、畜禽、蛋品、预制菜、饲料、食品饮料。</p></article>
+        <article class="card feature"><span class="num">1000亿+</span><h3>建筑业</h3><p>抢占数字设计、智能装备、装配式装修、智能家居新赛道，打造“黄冈建造”品牌。</p></article>
+        <article class="card feature"><span class="num">1000亿+</span><h3>建材产业</h3><p>石材、钢结构、新型建材、饰面材料共同转向高端化、智能化、绿色化。</p></article>
+        <article class="card"><span class="num">400亿+</span><h3>化工产业</h3><p>传统化工向现代化工、精细化工转型，打造磷氟化工特色产业集群。</p></article>
+        <article class="card"><span class="num">200亿+</span><h3>绿色智能船舶</h3><p>依托长江岸线，构建“一核两区多点全域”的绿色智能船舶产业体系。</p></article>
+        <article class="card"><span class="num">300亿+</span><h3>纺织产业</h3><p>补齐化纤、印染、成衣制造等关键环节，推动高端化、智能化、绿色化、集群化。</p></article>
+        <article class="card"><span class="num">200亿+</span><h3>汽车零部件</h3><p>从基础件向精密件跃升，从传统部件向新能源、智能网联部件转型。</p></article>
+        <article class="card"><span class="num">200亿+</span><h3>再生资源</h3><p>构建“回收—拆解—分拣—冶炼—精深加工”全链条体系。</p></article>
+      </div>
+      <div class="quote">第一节的核心，是把黄冈既有产业重新装上“数智、绿色、高端、链条化”的发动机。</div>
+    </section>
+
+    <section class="section" id="emerging">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">第二节 + 第三节｜新兴产业与未来产业</div>
+          <h2>一边培育新支柱，一边提前打开未来赛道</h2>
+        </div>
+        <p>新兴产业强调提质扩量和场景示范，未来产业强调技术产业化落地与现有产业未来化跃升。</p>
+      </div>
+      <div class="visual">
+        <img src="assets/chapter2-emerging-future.jpg" alt="新兴产业和未来产业视觉图" />
+        <div class="chips">
+          <div class="chip dark" style="left:5%;top:8%"><strong>新兴产业</strong>光电子、生命健康、新材料、新能源、低空经济。</div>
+          <div class="chip" style="right:5%;top:10%"><strong>未来产业</strong>具身智能、生物制造、氢能。</div>
+          <div class="chip" style="right:8%;bottom:12%"><strong>落地方式</strong>产业协同、场景开放、项目牵引。</div>
+        </div>
+      </div>
+      <div class="split">
+        <div class="panel">
+          <div class="section-kicker">新兴产业｜成为新支柱</div>
+          <div class="grid auto" style="margin-top:14px">
+            <article class="card"><span class="num">300亿+</span><h3>光电子信息</h3><p>融入武汉光电子信息产业集群，主攻电子化学品、新型显示材料、光通信材料。</p></article>
+            <article class="card"><span class="num">200亿+</span><h3>生命健康制造</h3><p>对接光谷生物城，推动原料药向制剂、器械、健康用品延伸。</p></article>
+            <article class="card"><span class="num">200亿+</span><h3>新材料</h3><p>高端金属、新型无机非金属、先进高分子、复合材料协同跃升。</p></article>
+            <article class="card"><span class="num">200亿+</span><h3>新能源</h3><p>新型储能、非电利用、智慧能源、电算协同把资源优势转成产业优势。</p></article>
+            <article class="card"><span class="num">200亿+</span><h3>低空经济</h3><p>通用机场、起降场、低空智能网联平台和“低空+”应用共同推进。</p></article>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="section-kicker">未来产业｜形成增长点</div>
+          <ul class="list" style="margin-top:14px">
+            <li><strong>具身智能：</strong>围绕人形机器人、高端工业自动化，攻关减速器、伺服电机、编码器、精密导轨与丝杠等核心部件，并在中医药、现代农业、智能船舶、建筑建材等场景示范。</li>
+            <li><strong>生物制造：</strong>推动生物技术赋能食品、医药、新材料、能源，发展生物酶制剂、生物基材料、生物清洁能源。</li>
+            <li><strong>氢能：</strong>实施“制输储用”全产业链培育，发展绿氢、氨、醇等绿色燃料和交通、化工、医药等应用场景。</li>
+          </ul>
+          <div class="pill-row">
+            <span class="pill"><svg><use href="#spark"/></svg>技术产业化</span>
+            <span class="pill"><svg><use href="#globe"/></svg>场景开放</span>
+            <span class="pill"><svg><use href="#link"/></svg>现有产业未来化</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="service">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">第四节｜突破性发展现代服务业</div>
+          <h2>服务业不是配角，而是产业链和消费端的连接器</h2>
+        </div>
+        <p>到“十五五”末，服务业增加值占 GDP 比重超过 55%。这一节同时面向生产端、生活端和产业融合端。</p>
+      </div>
+      <div class="panel">
+        <div class="grid three">
+          <article class="card feature">
+            <span class="num">55%+</span>
+            <h3>服务业增加值占 GDP 比重</h3>
+            <p>以服务业扩能提质行动，构建优质高效服务业体系。</p>
+          </article>
+          <article class="card">
+            <span class="icon"><svg><use href="#truck"/></svg></span>
+            <h3>生产性服务业</h3>
+            <p>现代物流、科技服务、商务服务、信息服务、现代金融、节能环保向专业化和价值链高端延伸。</p>
+          </article>
+          <article class="card">
+            <span class="icon"><svg><use href="#leaf"/></svg></span>
+            <h3>生活性服务业</h3>
+            <p>健康服务、现代商贸、文旅体育、家庭服务、养老服务推动高品质、多样化、便利化。</p>
+          </article>
+        </div>
+        <div class="grid two" style="margin-top:14px">
+          <article class="card">
+            <h3>服务业赋能制造业</h3>
+            <p>工业设计、检验检测、认证认可、工业互联网、人工智能大模型等嵌入制造环节，推动企业从生产制造型向生产服务型转变。</p>
+            <div class="pill-row">
+              <span class="pill">研发设计</span><span class="pill">中试验证</span><span class="pill">检验检测</span><span class="pill">数智转型</span>
+            </div>
+          </article>
+          <article class="card">
+            <h3>服务业连接农业和消费</h3>
+            <p>农业服务向加工技术、品牌建设、营销策划、农村金融及产业链中后端延伸，推动“从田间到餐桌”全链条提档升级。</p>
+            <div class="pill-row">
+              <span class="pill">消费进山</span><span class="pill">文旅+</span><span class="pill">康养+</span><span class="pill">平台经济</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="cluster">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">第五节｜推动产业集群发展</div>
+          <h2>从点状分布转向链群协同</h2>
+        </div>
+        <p>产业集群是第二章的组织方式：链群布局、龙头企业、产业生态共同提升产业链韧性与集群竞争力。</p>
+      </div>
+      <div class="visual">
+        <img src="assets/chapter2-cluster-brand.jpg" alt="产业集群与品牌矩阵视觉图" />
+        <div class="chips">
+          <div class="chip dark" style="left:5%;top:8%"><strong>链群协同</strong>补链强链、聚链成群，推动发展模式和企业组织形式变革。</div>
+          <div class="chip" style="right:5%;top:10%"><strong>梯队培育</strong>龙头企业、单项冠军、专精特新、小巨人协同成长。</div>
+          <div class="chip" style="left:7%;bottom:11%"><strong>产业生态</strong>市场资源配置、有为政府、基金赋能、协同创新。</div>
+        </div>
+      </div>
+      <div class="grid three">
+        <article class="card feature"><span class="num">400亿+</span><h3>两大重点集群</h3><p>麻城石材、武穴磷氟化工产业集群。</p></article>
+        <article class="card"><span class="num">200亿+</span><h3>五类成长集群</h3><p>光电子信息、生命健康、汽车零部件、泛家居、鄂东纺织服装。</p></article>
+        <article class="card"><span class="num">100亿+</span><h3>特色县域集群</h3><p>绿色智能船舶、团风钢构、浠水鸡蛋、蕲春蕲艾、钙基材料、光通信材料、医药化工、英山茶叶等。</p></article>
+      </div>
+      <div class="panel" style="margin-top:18px">
+        <div class="section-kicker">开发区主导产业</div>
+        <div class="matrix" style="margin-top:14px">
+          <div class="county"><strong>黄冈高新区</strong><span>生命健康、光电子信息、高端装备制造｜<b>450亿</b></span></div>
+          <div class="county"><strong>团风</strong><span>建筑、建材、农产品加工｜<b>300亿</b></span></div>
+          <div class="county"><strong>红安</strong><span>泛家居、高端装备制造、农产品加工｜<b>380亿</b></span></div>
+          <div class="county"><strong>麻城</strong><span>新型建材、汽配冶金、电力能源｜<b>600亿</b></span></div>
+          <div class="county"><strong>罗田</strong><span>医药化工、农产品加工、建材｜<b>100亿</b></span></div>
+          <div class="county"><strong>英山</strong><span>大健康、汽车零部件、建材家居｜<b>50亿</b></span></div>
+          <div class="county"><strong>浠水</strong><span>建材、农产品加工、智能制造｜<b>300亿</b></span></div>
+          <div class="county"><strong>蕲春</strong><span>大健康、新材料、农产品加工｜<b>300亿</b></span></div>
+          <div class="county"><strong>武穴</strong><span>新材料、现代化工、高端装备制造｜<b>400亿</b></span></div>
+          <div class="county"><strong>黄梅</strong><span>纺织服装、农产品加工、光电通信材料｜<b>350亿</b></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="brand">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">第六节｜加强品牌强市建设</div>
+          <h2>从“黄冈产品”走向“黄冈品牌”</h2>
+        </div>
+        <p>品牌强市建设把产业、产品、区域形象和质量基础设施串起来，形成可识别、可评价、可保护的品牌体系。</p>
+      </div>
+      <div class="panel">
+        <div class="grid four">
+          <article class="card feature"><span class="icon"><svg><use href="#badge"/></svg></span><h3>核心形象品牌</h3><p>以“大美黄冈·此心安处”为核心，打造东坡庙会、黄冈教育、红色文旅、中医药等全国知名品牌。</p></article>
+          <article class="card"><span class="icon"><svg><use href="#leaf"/></svg></span><h3>区域公用品牌</h3><p>重点发展“蕲艾”“英山云雾茶”两大省级区域公用品牌，培育“一县一品、一县多品”。</p></article>
+          <article class="card"><span class="icon"><svg><use href="#factory"/></svg></span><h3>企业与产业品牌</h3><p>围绕大健康、现代化工、绿色建材、智能制造、农产品加工等集群培育领军企业品牌。</p></article>
+          <article class="card"><span class="icon"><svg><use href="#spark"/></svg></span><h3>产品品牌</h3><p>提升核心产品品牌化、规模化供给，形成市场认可度高的创新产品和品牌标杆。</p></article>
+        </div>
+        <div class="grid two" style="margin-top:14px">
+          <article class="card">
+            <h3>品牌培育重点</h3>
+            <div class="pill-row">
+              <span class="pill">农业品牌</span><span class="pill">制造业品牌</span><span class="pill">服务业品牌</span><span class="pill">文旅业品牌</span><span class="pill">建筑业品牌</span><span class="pill">中医药品牌</span>
+            </div>
+          </article>
+          <article class="card">
+            <h3>品牌底座能力</h3>
+            <p>标准建设、质量强基、检验检测、品牌价值评价、商标地标培育、品牌运营升级和品牌保护共同支撑品牌强市。</p>
+          </article>
+        </div>
+        <div class="quote">第二章最后落在品牌，是为了把产业能力转化为市场识别度、区域影响力和长期竞争力。</div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer-note">
+    内容依据《黄冈市国民经济和社会发展第十五个五年规划纲要》第二章第一节至第六节整理。页面文字用于重点解读，具体表述以规划原文为准。
+  </footer>
+</body>
+</html>
+
